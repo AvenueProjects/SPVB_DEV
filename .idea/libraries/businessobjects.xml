@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="businessobjects">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../Lib/SPVB/businessobjects.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
