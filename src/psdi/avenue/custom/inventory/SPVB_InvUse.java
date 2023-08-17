@@ -31,13 +31,14 @@ public class SPVB_InvUse extends InvUse {
     private void spvb_createInvuLine(MboRemote sourceRemote) throws MXException, RemoteException {
         MboSetRemote invuline = this.getMboSet("INVUSELINE");
         MboRemote invUseLineRemote = invuline.addAtEnd();
-        //invUseLineRemote.setValue("FROMBIN", sourceRemote.getString("TOBIN"), 11L);
-        //invUseLineRemote.setValue("FROMLOT", sourceRemote.getString("TOLOT"), 11L);
-       // invUseLineRemote.setValue("TOLOT", sourceRemote.getString("TOLOT"), 11L);
+
+        invUseLineRemote.setValue("USETYPE", "RETURN", 11L);
+        invUseLineRemote.setValue("SPVB_WONUMREF", sourceRemote.getString("REFWO"), 11L);
         invUseLineRemote.setValue("linetype", "ITEM", 11L);
-    //    invUseLineRemote.setValue("DESCRIPTION", sourceRemote.getString("DESCRIPTION"), 11L);
         invUseLineRemote.setValue("itemnum", sourceRemote.getString("itemnum"), 11L);
-       // invUseLineRemote.setValue("POGLDEBITACCT", sourceRemote.getString("GLDEBITACCT"), 11L);
+        invUseLineRemote.setValue("SPVB_TRANSACTION_TYPE_ID", "42", 11L);
+
+        invUseLineRemote.setValue("SPVB_TRANSACTION_ACTION_ID", "27", 11L);
        // invUseLineRemote.setValue("INSPECTIONREQUIRED", sourceRemote.getString("INSPECTIONREQUIRED"), 11L);
        // invUseLineRemote.setValue("DISPLAYUNITCOST", sourceRemote.getString("AVGCOST"), 11L);
        // invUseLineRemote.setValue("UNITCOST", sourceRemote.getString("AVGCOST"), 11L);
